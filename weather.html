@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style2.css">
+        <style>
+
+
+        </style>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    </head>
+
+
+    <body>
+
+        <div class="container">
+            <div class="loading">
+                <h3>We are Roses</h3>
+                <img id="road1" src="https://i.postimg.cc/vBpdY5DY/Frame-273.png" width="48px">
+                <img id="road2" src="https://i.postimg.cc/vBpdY5DY/Frame-273.png" width="48px">
+                <img id="road3" src="https://i.postimg.cc/vBpdY5DY/Frame-273.png" width="48px">
+                <img class="rose" src="icon/rose.png" width="76px" height="52px"/>
+            </div>
+            <div class="white"></div>
+            <div class="background">
+                <img id="moon" src="https://i.postimg.cc/jSLdCg0H/Mask-Group-1.png" width="414px" height="410px"/>
+                <img id="prince" src="#" width="414px"/>
+                <img id="animation_rain" src="#" width="40px"/>
+                <img id="rmoon" src="https://i.postimg.cc/fbpmZXhw/xx.png" width="48px"/>
+
+            </div>
+
+            <img id="main_icon" src="" width="180px">
+
+            <div class="contents">
+
+                <!-- 리스트 추가 -->
+
+                <div class="blackopacity"></div>
+                <div class="listadd">
+                    <div class="listadd-contant">
+                        <img class="close" src="https://i.postimg.cc/GhhFLC31/Frame-267.png" width="24px"/>
+                        <div class="list-time">
+                            <input id="time">
+                            <h2>:</h2>
+                            <input id="minutes">
+                        </div>
+                        <div class="labels">
+                            <div class="labels-content">
+                                <div class="togglebutton am">AM</div>
+                                <div class="ampm-button ambutton">AM</div>
+                                <div class="ampm-button pmbutton">PM</div>
+                            </div>
+                        </div>
+                        <div class="listinput">
+                            <input>
+                            <h5 id="input-button">Add</h5>
+                        </div>
+                        <div></div>
+                        <div id="listtitle">List</div>
+                        <div class="listitems">
+                            <!-- <div class="listitem">
+                                <h5> • </h5><h5>Take an umbrella when you go out.</h5>
+                            </div>
+                            <div class="listitem">
+                                <h5> • </h5><h5>AirPods</h5>
+                            </div> -->
+                        </div>
+                        <div class="line"></div>
+                        <div class="done">Done</div>
+                    </div> 
+                </div>
+                
+
+                <!-- ////// -->
+
+
+                <img id="statusbar" src="https://i.postimg.cc/WpKR9WLf/Statusbar.png" width="414px" height="48px">
+
+                <!-- 투두 메인 -->
+
+                
+                <div class="todomain">
+                    <div class="title">We are Roses</div>
+                    <div class="subnav">
+                        <h3>Weekly</h3><img src="https://i.postimg.cc/VvymmJd6/Frame-263.png" width="24px"/>
+                    </div>
+                    <div class="rowscroll">
+                        <div class="tditems">
+                            <!-- <div class="tditem">
+                                <div class="tditem-icon"><img src="#" width="60px;"></div>
+                                <h5>TUE</h5>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="subnav">
+                        <h3>To-Do</h3><img id="addlist" src="https://i.postimg.cc/8CLF065w/Frame-260.png" width="24px"/>
+                    </div>
+                    <div class="verticalscroll">
+                        <div class="lists">
+                            <div class="list unchecked">
+                                <div class="list-date">
+                                    <div>11:00</div>
+                                    <h5>AM</h5>
+                                </div>
+                                <div class="list-text">
+                                    <h6>• 나갈 때 우산 챙겨 나가기 </h6>
+                                </div>
+                                <div class="checkicon"></div>
+                            </div>
+
+                            <div class="list unchecked">
+                                <div class="list-date">
+                                    <div>12:00</div>
+                                    <h5>PM</h5>
+                                </div>
+                                <div class="list-text">
+                                    <h6>• 나갈 때 우산 챙겨 나가기 </h6>
+                                    <h6>• 에어팟 챙기기 </h6>
+                                    <h6>• 샌드위치 챙기기 </h6>
+                                </div>
+                                <div class="checkicon"></div>
+                            </div>
+
+                            <div class="list unchecked">
+                                <div class="list-date">
+                                    <div>1:00</div>
+                                    <h5>PM</h5>
+                                </div>
+                                <div class="list-text">
+                                    <h6>• 웹 앱 어플리케이션 과제 제출 </h6>
+                                    <h6>• 410호 대실 </h6>
+                                    <h6>• 녹강 듣기 </h6>
+                                </div>
+                                <div class="checkicon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+                <!-- ////////////// -->
+
+                <!-- 사운드클라우드 메인 -->
+
+                <div class="soundcloud-main">
+
+                </div>
+
+
+
+                <!--//////////////////-->
+
+
+
+
+
+
+
+                <!-- 더 보기 -->
+
+                <div class="more">
+                    <div class="moremenu">
+                        <img id="moremenu-backicon" src="https://i.postimg.cc/y855sGGm/back.png" width="36px"/>
+                        <div class="moremenu-title">Forecast Refort</div>
+                        <div class="moremenu-subtitle">
+                            Air Quality &<br>Weather
+                        </div>
+                        <div class="moremenu-nav">
+                            <h6 id="today">Today</h6>
+                            <h6 id="weekly">Weekly</h6>
+                        </div>
+                        <div class="highlighted"></div>
+                    </div>
+                    <div class="morecontent">
+                        <div class="vertical">
+                            <div class="moresubnav">
+                                <h3>Today</h3>
+                            </div>
+                            <div class="p-m">
+                                <div class="p-m-content">
+                                    <div class="p-m-weather">
+                                        <img id="more-icon" src="#" width="70px">
+                                        <div class="p-m-weather-text">
+                                            <h3>Seoul</h3>
+                                            <p>Mon</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-m-info">
+                                        <div class="ADI">
+                                            <img id="ADI-icon" src="https://i.postimg.cc/Bbpk7McL/Group-243.png" width="50px" height="50px"/>
+                                            <div class="adi-text first-adi">
+                                                <h2 id="first">56</h2>
+                                                <p id="firstpm">Pm 2.5 l 14.5 sg/m</p>
+                                            </div>
+                                        </div>
+                                        <div class="badADI">
+                                            <img id="badADI-icon" src="https://i.postimg.cc/C1LjH716/Ellipse-37.png" width="30px" height="30px"/>
+                                            <div class="adi-text second-adi">
+                                                <h2 id="second">19</h2>
+                                                <p id="secondpm">Pm 2.5 l 14.5 sg/m</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subnav weeklymore-nav">
+                                <h3>Air Polution</h3>
+                            </div>
+                            <div class="air">
+                                <div class="airpyo">
+                                    <p>2.5/10</p>
+                                    <div class="pyo">
+                                        <div class="point-content">
+                                            <div class="point-index">
+                                                <p>150</p>
+                                                <p>50</p>
+                                                <p>5</p>
+                                                <p>0</p>
+                                            </div>
+                                            <div class="point-pyo">
+                                                <div class="row-scroll">
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red"></div>
+                                                                <div class="blue"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date t-d">
+                                                            9:00
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red2"></div>
+                                                                <div class="blue2"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date">
+                                                            12:00
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red"></div>
+                                                                <div class="blue"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date">
+                                                            15:00
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red2"></div>
+                                                                <div class="blue2"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date">
+                                                            18:00
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red"></div>
+                                                                <div class="blue"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date">
+                                                            21:00
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red2"></div>
+                                                                <div class="blue2"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date t-d">
+                                                            00:00
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red"></div>
+                                                                <div class="blue"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date">
+                                                            3:00
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="point-graph">
+                                                        <div class="point">
+                                                            <div class="point-bar">
+                                                                <div class="red2"></div>
+                                                                <div class="blue2"></div>
+                                                            </div>            
+                                                        </div>
+                                                        <div class="point-date">
+                                                            6:00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="moreweekly">
+                        <div class="subnav weeklymore-nav">
+                            <h3>Weekly</h3>
+                        </div>
+                        <div class="rowscroll">
+                            <div class="moreitems weekmorezitems">
+                                <!--<div class="moreitem">
+                                    <img class="more_icon" src="" width="60px" height="60px"/>
+                                    <div class="more_text">
+                                        <h5>Tue</h5>
+                                        <h4>30º</h4>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+
+                        <div class="subnav weeklymore-nav">
+                            <h3>Air Polution</h3>
+                        </div>
+                        <div class="air">
+                            <div class="airpyo">
+                                <p>2.5/10</p>
+                                <div class="pyo">
+                                    <div class="point-content">
+                                        <div class="point-index">
+                                            <p>150</p>
+                                            <p>50</p>
+                                            <p>5</p>
+                                            <p>0</p>
+                                        </div>
+                                        <div class="point-pyo">
+                                            <div class="row-scroll">
+                                                <div class="point-graph">
+                                                    <div class="point">
+                                                        <div class="point-bar">
+                                                            <div class="red"></div>
+                                                            <div class="blue"></div>
+                                                        </div>            
+                                                    </div>
+                                                    <div class="point-date t-d">
+                                                        Fri
+                                                    </div>
+                                                </div>
+
+                                                <div class="point-graph">
+                                                    <div class="point">
+                                                        <div class="point-bar">
+                                                            <div class="red2"></div>
+                                                            <div class="blue2"></div>
+                                                        </div>            
+                                                    </div>
+                                                    <div class="point-date">
+                                                        Sat
+                                                    </div>
+                                                </div>
+
+                                                <div class="point-graph">
+                                                    <div class="point">
+                                                        <div class="point-bar">
+                                                            <div class="red"></div>
+                                                            <div class="blue"></div>
+                                                        </div>            
+                                                    </div>
+                                                    <div class="point-date">
+                                                        Sun
+                                                    </div>
+                                                </div>
+
+                                                <div class="point-graph">
+                                                    <div class="point">
+                                                        <div class="point-bar">
+                                                            <div class="red2"></div>
+                                                            <div class="blue2"></div>
+                                                        </div>            
+                                                    </div>
+                                                    <div class="point-date">
+                                                        Mon
+                                                    </div>
+                                                </div>
+
+                                                <div class="point-graph">
+                                                    <div class="point">
+                                                        <div class="point-bar">
+                                                            <div class="red"></div>
+                                                            <div class="blue"></div>
+                                                        </div>            
+                                                    </div>
+                                                    <div class="point-date">
+                                                        Tue
+                                                    </div>
+                                                </div>
+
+                                                <div class="point-graph">
+                                                    <div class="point">
+                                                        <div class="point-bar">
+                                                            <div class="red2"></div>
+                                                            <div class="blue2"></div>
+                                                        </div>            
+                                                    </div>
+                                                    <div class="point-date">
+                                                        Wen
+                                                    </div>
+                                                </div>
+
+                                                <div class="point-graph">
+                                                    <div class="point">
+                                                        <div class="point-bar">
+                                                            <div class="red"></div>
+                                                            <div class="blue"></div>
+                                                        </div>            
+                                                    </div>
+                                                    <div class="point-date">
+                                                        Thu
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- /////////////// -->
+
+
+                <!-- 홈 메인 -->
+                               
+                <div class="main">
+                    <img id="backicon" src="https://i.postimg.cc/D0zfyQpF/back.png" width="36px"/>
+                    <div class="locate">
+                        <h2 id="city"></h2>
+                        <a href="#"><img src="https://i.postimg.cc/PqPYMQGh/GPS.png" width="30px"></a>
+                    </div>
+                    <div id="search">
+                        <img src="https://i.postimg.cc/gJzNVByJ/Search.png" width="30px">
+                        <div id="searchback">
+                            <input id="searchcity">
+                        </div>
+                    </div>
+                    <p>Mon ,11 Oct, 2021</p>
+                    <div class="temp">
+                        <div id="maintemp"><h1></h1><div id="do"></div></div>
+                        <div id="barricade"></div>
+                        <div class="st">
+                            <div class="subtemp2">
+                                <div class="subtemp2item day"><h3>Mon</h3></div>
+                                <div class="subtemp2item wth"><h3>Djfsjkdf</h3></div>
+                            </div>
+                            <div id="subtemp">
+                                <div class="subtempitem htemp"><img src="https://i.postimg.cc/T1cVRBkx/highst.png" width="30px"><h3></h3></div>
+                                <div class="subtempitem ltemp"><img src="https://i.postimg.cc/tCXdrCT4/lowest.png" width="30px"><h3></h3></div>
+                            </div>
+                            <!-- <div id="subtemp3">
+                                <div class="subtemp3item htemp"><img src="https://i.postimg.cc/T1cVRBkx/highst.png" width="30px"><h3>º</h3></div>
+                                <div class="subtemp3item ltemp"><img src="https://i.postimg.cc/tCXdrCT4/lowest.png" width="30px"><h3>º</h3></div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="detailweather">
+                        <div class="detail amtwind"><img class="icon" src="https://i.postimg.cc/GtD9xf8D/Group-153.png" width="52px"><h6>m/h</h6></div>
+                        <div class="detail amthum"><img class="icon" src="https://i.postimg.cc/fLrMFvnv/Group-151.png" width="52px"><h6>%</h6></div>
+                        <div class="detail amtcloud"><img class="icon" src="https://i.postimg.cc/SKZXSCbn/Group-152.png" width="52px"><h6>%</h6></div>
+                    </div>
+                    <div class="subnav">
+                        <h3>Today</h3><h6 id=viewmore>view more</h6>
+                    </div>
+                    <div class="rowscroll">
+                        <div class="items todayitems">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ////////////////////// -->
+
+                
+
+                <div class="nav">
+                    <div class="navicons">
+                        <a href="#">
+                            <div class="navback tdback todolist"></div>
+                        </a>
+                        <a href="#">
+                            <div class="navback hmback-clicked home"></div>
+                        </a>
+                        <a href="#">
+                            <div class="navback soundcloud sdback"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <script >
+            $(function(){
+
+                setInterval(function(){
+                    $('#road1').animate({'margin-top':-12},300)
+                            .animate({'margin-top':0},300);
+
+                    $('#road2').delay(200)
+                                .animate({'margin-top':-12},300)
+                                .animate({'margin-top':0},300);
+
+                    $('#road3').delay(400)
+                                .animate({'margin-top':-12},300)
+                                .animate({'margin-top':0},300);
+
+                    $('.loading').css('background-color','#535B74');
+                    $('.loading > h3').css('color','white');
+                }, 1500);
+
+                setInterval(function(){
+                    $('.loading').css('opacity','0');
+                },3000);
+
+                setInterval(function(){
+                    $('.loading').css('display','none');
+                    $('.white').css('display','none');
+                    $('.contents').css('opacity','1');
+                    $('.background').css('opacity','1');
+                    $('#main_icon').css('opacity','1');
+                },3500);
+
+                // $('#road1').animate({'margin-top':-12},300)
+                //             .animate({'margin-top':0},300);
+
+                // $('#road2').delay(300)
+                //             .animate({'margin-top':-12},300)
+                //             .animate({'margin-top':0},300);
+
+                // $('#road3').delay(600)
+                //             .animate({'margin-top':-12},300)
+                //             .animate({'margin-top':0},300);
+
+
+                
+                // setTimeout(function(){
+                //     $('#road1').animate({'margin-top':-5},300);
+                // },100);
+
+                //ansan 다른 도시
+                let theother = $('<div class="theother"></div>');
+                let theothercontents = $('<div class="theother-contents"></div>');
+                let theothercity = $('<div class="theother-city"></div>');
+                let otherimg = $('<img id="otherimg" src="" width="60px">');
+                let othertext = $('<div class="othertext"><h5 id="ansan"></h5><h4 id="ansantemp">º</h4></div>');
+
+                theothercity.append(otherimg);
+                theothercity.append(othertext);
+                theothercontents.append(theothercity);
+                theother.append(theothercontents);
+                $('.container').append(theother);
+
+                $.getJSON('https://api.openweathermap.org/data/2.5/weather?id=1846918&appid=55aa2bc6da3730508a59007c6fe6302a&units=metric',
+                function(data){
+                    console.log(data);
+
+                    let city = data.name;
+                    let temp = data.main.temp.toFixed(0);
+                    let temperature = temp + $('#ansantemp').text();
+
+                    $('#ansan').text(city);
+                    $('#ansantemp').text(temperature);
+
+                    let othercityCode = data.weather[0].icon;
+                     $('#otherimg').attr('src', 'icon/'+ othercityCode +'.png');
+
+                });
+
+                // 인천 날씨
+                let incheoncity = $('<div class="theother-city"></div>');
+                let incheonimg = $('<img id="incheonimg" src="" width="60px">');
+                let incheontext = $('<div class="othertext"><h5 id="incheon"></h5><h4 id="incheontemp">º</h4></div>');
+
+                incheoncity.append(incheonimg);
+                incheoncity.append(incheontext);
+                theothercontents.append(incheoncity);
+
+                $.getJSON('https://api.openweathermap.org/data/2.5/weather?id=1843561&appid=55aa2bc6da3730508a59007c6fe6302a&units=metric',
+                function(data){
+                    console.log(data);
+
+                    let city = data.name;
+                    let temp = data.main.temp.toFixed(0);
+                    let temperature = temp + $('#incheontemp').text();
+
+                    $('#incheon').text(city);
+                    $('#incheontemp').text(temperature);
+
+                    let othercityCode = data.weather[0].icon;
+                     $('#incheonimg').attr('src', 'icon/'+ othercityCode +'.png');
+
+                });
+
+                // 안양 날씨
+                let Anyangcity = $('<div class="theother-city"></div>');
+                let Anyangimg = $('<img id="Anyangimg" src="" width="60px">');
+                let Anyangtext = $('<div class="othertext"><h5 id="Anyang"></h5><h4 id="Anyangtemp">º</h4></div>');
+
+                Anyangcity.append(Anyangimg);
+                Anyangcity.append(Anyangtext);
+                theothercontents.append(Anyangcity);
+
+                $.getJSON('https://api.openweathermap.org/data/2.5/weather?id=1846898&appid=55aa2bc6da3730508a59007c6fe6302a&units=metric',
+                function(data){
+                    console.log(data);
+
+                    let city = data.name;
+                    let temp = data.main.temp.toFixed(0);
+                    let temperature = temp + $('#Anyangtemp').text();
+
+                    $('#Anyang').text(city); 
+                    $('#Anyangtemp').text(temperature);
+
+                    let othercityCode = data.weather[0].icon;
+                     $('#Anyangimg').attr('src', 'icon/'+ othercityCode +'.png');
+
+                });
+                
+                
+
+
+
+                ////Home 화면//////
+                $.getJSON('https://api.openweathermap.org/data/2.5/weather?id=1835848&appid=55aa2bc6da3730508a59007c6fe6302a&units=metric',
+                function(data){
+                     console.log(data);
+
+                    let today = moment();
+                    let date = today.format('dddd, MM.DD, YYYY');
+                    let hour = today.format('HH');
+                    let mn = today.format('mm');
+
+                    $('#time').val(hour);
+                    $('#minutes').val(mn);
+
+                     let city = data.name;
+
+                     let temp = data.main.temp.toFixed(0);
+                     let mintemp = data.main.temp_min.toFixed(0);
+                     mintemp = mintemp + $('.ltemp > h3').text();
+                     let maxtemp = data.main.temp_max.toFixed(0);
+                     maxtemp = maxtemp + $('.htemp > h3').text();
+
+                     let weather = data.weather[0].main;
+
+
+                     let wind = data.wind.speed;
+                     wind = wind + $('.amtwind > h6').text();
+
+                     let humidity = data.main.humidity;
+                     humidity = humidity + $('.amthum > h6').text();
+
+                     let amtcloud = data.clouds.all;
+                     amtcloud = amtcloud + $('.amtcloud > h6').text();
+
+
+                     
+                     console.log(city, temp, weather);
+                     
+                     $('#city').text(city);
+                     $('#maintemp > h1 ').text(temp);
+                     $('.htemp > h3').text(maxtemp);
+                     $('.ltemp > h3').text(mintemp);
+                     $('.amtwind > h6').text(wind);
+                     $('.amthum > h6').text(humidity);
+                     $('.amtcloud > h6').text(amtcloud);
+                     $('.main > p').text(date);
+                      
+                     let iconCode = data.weather[0].icon;
+                     $('#main_icon').attr('src', 'icon/3d/'+ iconCode +'.png');
+                     
+                     let date2 = today.format('dddd');
+                     $('.day > h3').text(date2);
+
+                     let wth = data.weather[0].main;
+                     $('.wth > h3').text(wth);
+
+                    setInterval( function(){
+                        $('#subtemp').css('top', '88px');
+                        $('#subtemp').css('transform', 'perspective(300px)rotateX(-90deg)');
+                        $('#subtemp').css('opacity', '0');
+                        $('#subtemp').css('background-color','#eee');
+                        $('.subtemp2').css('bottom', '0');
+                        $('.subtemp2').css('transform', 'perspective(300px)rotateX(0deg)');
+                        $('.subtemp2').css('opacity', '1');
+                        $('.subtemp2').css('background-color','transparent');
+                     }, 1000 );
+
+                     setTimeout(function(){
+                         setInterval( function(){
+                            $('#subtemp').css('top', '-88px');
+                            $('#subtemp').css('transform', 'perspective(300px) rotateX(90deg)');
+                            $('#subtemp').css('opacity', '0');
+                         }, 1000);
+
+                        setTimeout(function(){
+                            setInterval( function(){
+                                $('#subtemp').css('top', '0px');
+                                $('#subtemp').css('transform', 'perspective(300px) rotateX(0deg)');
+                                $('#subtemp').css('opacity', '1');
+                                $('#subtemp').css('background-color','transparent');
+                                $('.subtemp2').css('background-color','#eee');
+                                $('.subtemp2').css('bottom', '-88px');
+                                $('.subtemp2').css('opacity', '0');
+                                $('.subtemp2').css('transform', 'perspective(300px) rotateX(-90deg)');
+                            }, 1000);
+                            setTimeout(function(){
+                                setInterval( function(){
+                                    $('.subtemp2').css('bottom', '88px');
+                                    $('.subtemp2').css('transform', 'perspective(300px) rotateX(60deg)');
+                                    $('.subtemp2').css('opacity', '0');
+                                }, 1000);
+
+                                setTimeout(function(){
+                                    setInterval( function(){
+                                        $('#subtemp').css('top', '88px');
+                                        $('#subtemp').css('transform', 'perspective(300px) rotateX(-90deg)');
+                                        $('#subtemp').css('opacity', '0');
+                                        $('#subtemp').css('background-color','#eee');
+                                        $('.subtemp2').css('bottom', '0');
+                                        $('.subtemp2').css('transform', 'perspective(300px) rotateX(0deg)');
+                                        $('.subtemp2').css('opacity', '1');
+                                        $('.subtemp2').css('background-color','transparent');
+                                    }, 1000 );
+                                    setTimeout(function(){
+                                        setInterval( function(){
+                                            $('#subtemp').css('top', '-88px');
+                                            $('#subtemp').css('transform', 'perspective(300px) rotateX(90deg)');
+                                            $('#subtemp').css('opacity', '0');
+                                        }, 1000);
+                                        setTimeout(function(){
+                                            setInterval( function(){
+                                                $('#subtemp').css('top', '0px');
+                                                $('#subtemp').css('transform', 'perspective(300px) rotateX(0deg)');
+                                                $('#subtemp').css('opacity', '1');
+                                                $('#subtemp').css('background-color','transparent');
+                                                $('.subtemp2').css('background-color','#eee');
+                                                $('.subtemp2').css('bottom', '-88px');
+                                                $('.subtemp2').css('opacity', '0');
+                                                $('.subtemp2').css('transform', 'perspective(300px) rotateX(-90deg)');
+                                            }, 1000);
+                                        },1000);
+                                    },2000);                       
+                                },2000);
+                            },2000);
+                        }, 2000);
+                     }, 2000);
+                     
+
+                     /////시간에 따른 배경 바뀌기//////////////
+                    //if(iconCode.includes('n')) {
+                        //$('#moon').css('background-color', '#8494C5');
+                        //$('.moremenu').css('background-color', '#8494C5');
+                    //};
+                    //if(iconCode.includes('d')) {
+                        //$('#moon').css('background-color', '#535B74');
+                        //$('.moremenu').css('background-color', '#535B74');
+                    //};
+
+                    /////////////////////////////////////////////////////////////////////////////
+                    //////////////////////////
+
+                     let Mainicon = $('#main_icon');
+                     
+                     setInterval(function(){
+                        $('#main_icon').animate({'margin-top': 8}, 1000,)
+                                    .delay(100)
+                                    .animate({'margin-top': 0}, 1000);
+                     }, 2100);
+
+                     setInterval(function(){
+                        $('#animation_rain').animate({'top': 200, 'left': 190}, 800,)
+                                    .delay(300)
+                                    .animate({'top': 182, 'left': 206}, 400);
+                     }, 1500);
+
+                     let todaymoreCode = data.weather[0].icon;
+                     $('#more-icon').attr('src', 'icon/subicon/'+ todaymoreCode +'.png');
+
+
+
+                     ////날씨에 따른 이미지 변화//////////////
+                    if(iconCode.includes('01d')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/B69yQVyX/03d-4.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('02d')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/B69yQVyX/03d-4.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('03d')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/rytHtMcz/03d-5.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('04d')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/rytHtMcz/03d-5.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('09d')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/KY7n69Y2/Group-269.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('10d')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/KY7n69Y2/Group-269.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('11d')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/KY7n69Y2/Group-269.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('13d')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/zG69bBMt/03d-1.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('50d')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/zXdX9dYK/03d-4.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    /////////////
+
+                    if(iconCode.includes('01n')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/fTyf0vYC/03d-6.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('02n')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/fTyf0vYC/03d-6.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('03n')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/rytHtMcz/03d-5.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('04n')) {
+                        // $('#animation_rain').attr('src','https://i.postimg.cc/rytHtMcz/03d-5.png');
+                        $('#animation_rain').css('opacity', '0');
+                        $('#prince').attr('src', 'https://i.postimg.cc/mkppKYcS/Frame-270.png');
+                    };
+
+                    if(iconCode.includes('09n')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/KY7n69Y2/Group-269.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('10n')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/KY7n69Y2/Group-269.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('11n')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/KY7n69Y2/Group-269.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('13n')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/zG69bBMt/03d-1.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                    if(iconCode.includes('50n')) {
+                        $('#animation_rain').attr('src','https://i.postimg.cc/zXdX9dYK/03d-4.png');
+                        $('#prince').attr('src', 'https://i.postimg.cc/g2n80zkN/Mask-Group-3.png');
+                    };
+
+                });
+
+                $.getJSON('https://api.openweathermap.org/data/2.5/forecast?id=1835848&appid=55aa2bc6da3730508a59007c6fe6302a&units=metric',
+                function(data){
+                    console.log(data);
+
+
+                    // for문 사용시 아이콘이 다 통일 되어서 나옴////
+
+                    // for( let i = 0; i<8; i++ ){
+
+                    //     let dt = data.list[i].dt;
+                    //     let date = moment(dt * 1000).format('HH:mm');
+
+                    //     let temp = data.list[i].main.temp.toFixed(0);
+                    //     let dom0 = $('<h4>º</h4>');
+                    //     temp = temp + $(dom0).text();
+
+                    //     let weather = data.list[i].weather[0].main;
+
+                    //     console.log(dt, temp, weather);
+
+                    //     let dom1 = $('<div class="todayitem"></div>');
+                        
+                    //     let dom2 = $('<img class="sub_icon">');
+
+                    //     let dom3 = $('<div></div>');
+
+                    //     dom1.append(dom2);
+                    //     dom1.append(dom3);
+                    //     dom3.append('<h5>' + date + '</h5>');
+                    //     dom3.append('<h4>' + temp + '</h4>');
+
+                    //     $('.todayitems').append(dom1);
+
+                    //     let dayiconCode = data.list[i].weather[0].icon;
+                    //     $('.sub_icon').attr('src', 'icon/'+ dayiconCode +'.png');
+
+                    // }
+
+
+                    // for( let i = 0; i<40; i=i+8 ){
+
+                    //     let wk1 = $('<div class="tditem"></div>'); 
+
+                    //     let wk2 = $('<img class="tditemicon">');
+                        
+
+                    //     let dt = data.list[i].dt;
+                    //     let date = moment(dt * 1000).format('ddd');
+
+                    //     wk1.append(wk2);
+                    //     wk1.append('<h5>' + date + '</h5>');
+                    //     $('.tditems').append(wk1);
+
+                    //     let subiconCode = data.list[i].weather[0].icon;
+                    //     $('.tditemicon').attr('src', 'icon/'+ subiconCode +'.png');
+
+
+
+
+                    //     let morewk1 = $('<div class="moreitem"></div>');
+
+                    //     let morewk2 = $('<img class="more_icon" src="#" width="60px" height="60px">');
+
+                    //     //let moredate = moment(dt * 1000).format('ddd');
+
+                    //     let temp = data.list[i].main.temp.toFixed(0);
+
+
+                    //     let moretext = $('<div class="more_text"><h5>'+ date +'</h5><h4>'+ temp + 'º' +'</h4></div>');
+
+                    //     $(morewk1).append(morewk2);
+                    //     $(morewk1).append(moretext);
+
+
+
+                    //     let moreiconCode = data.list[i].weather[0].icon;
+                    //     $('.more_icon').attr('src', 'icon/'+ moreiconCode +'.png');
+
+                    //     $('.moreitems').append(morewk1);
+
+                    // }
+
+                        let dt0 = data.list[0].dt;
+                        let date0 = moment(dt0 * 1000).format('HH:mm');
+                        
+
+                        let temp0 = data.list[0].main.temp.toFixed(0);
+                        let dom = $('<h4>º</h4>');
+                        temp0 = temp0 + $(dom).text();
+
+                        let dom0 = $('<div class="todayitem"></div>');
+                        
+                        let dom2 = $('<img class="sub_icon dom0">');
+
+                        let dom3 = $('<div></div>');
+
+                        dom0.append(dom2);
+                        dom0.append(dom3);
+                        dom3.append('<h5>' + date0 + '</h5>');
+                        dom3.append('<h4>' + temp0 + '</h4>');
+
+                        $('.todayitems').append(dom0);
+
+                        let dayiconCode = data.list[0].weather[0].icon;
+                        $('.dom0').attr('src', 'icon/'+ dayiconCode +'.png');
+
+
+
+
+                        let dt1 = data.list[1].dt;
+                        let date1 = moment(dt1 * 1000).format('HH:mm');
+
+                        let temp1 = data.list[1].main.temp.toFixed(0);
+                        let dom1 = $('<h4>º</h4>');
+                        temp1 = temp1 + $(dom1).text();
+
+                        let dom01 = $('<div class="todayitem"></div>');
+                        
+                        let dom21 = $('<img class="sub_icon dom1">');
+
+                        let dom31 = $('<div></div>');
+
+                        dom01.append(dom21);
+                        dom01.append(dom31);
+                        dom31.append('<h5>' + date1 + '</h5>');
+                        dom31.append('<h4>' + temp1 + '</h4>');
+
+                        $('.todayitems').append(dom01);
+
+                        let dayiconCode1 = data.list[1].weather[0].icon;
+                        $('.dom1').attr('src', 'icon/'+ dayiconCode1 +'.png');
+
+
+                        let dt2 = data.list[2].dt;
+                        let date2 = moment(dt2 * 1000).format('HH:mm');
+
+                        let temp2 = data.list[2].main.temp.toFixed(0);
+                        let dom2_ = $('<h4>º</h4>');
+                        temp2 = temp2 + $(dom2_).text();
+
+                        let dom02 = $('<div class="todayitem"></div>');
+                        
+                        let dom22 = $('<img class="sub_icon dom2">');
+
+                        let dom32 = $('<div></div>');
+
+                        dom02.append(dom22);
+                        dom02.append(dom32);
+                        dom32.append('<h5>' + date2 + '</h5>');
+                        dom32.append('<h4>' + temp2 + '</h4>');
+
+                        $('.todayitems').append(dom02);
+
+                        let dayiconCode2 = data.list[2].weather[0].icon;
+                        $('.dom2').attr('src', 'icon/'+ dayiconCode2 +'.png');
+
+
+
+
+                        let dt3 = data.list[3].dt;
+                        let date3 = moment(dt3 * 1000).format('HH:mm');
+
+                        let temp3 = data.list[3].main.temp.toFixed(0);
+                        let dom3_ = $('<h4>º</h4>');
+                        temp3 = temp3 + $(dom3_).text();
+
+                        let dom03 = $('<div class="todayitem"></div>');
+                        
+                        let dom23 = $('<img class="sub_icon dom3">');
+
+                        let dom33 = $('<div></div>');
+
+                        dom03.append(dom23);
+                        dom03.append(dom33);
+                        dom33.append('<h5>' + date3 + '</h5>');
+                        dom33.append('<h4>' + temp3 + '</h4>');
+
+                        $('.todayitems').append(dom03);
+
+                        let dayiconCode3 = data.list[3].weather[0].icon;
+                        $('.dom3').attr('src', 'icon/'+ dayiconCode3 +'.png');
+
+
+
+                        let dt4 = data.list[4].dt;
+                        let date4 = moment(dt4 * 1000).format('HH:mm');
+
+                        let temp4 = data.list[4].main.temp.toFixed(0);
+                        let dom4_ = $('<h4>º</h4>');
+                        temp4 = temp4 + $(dom4_).text();
+
+                        let dom04 = $('<div class="todayitem"></div>');
+                        
+                        let dom24 = $('<img class="sub_icon dom4">');
+
+                        let dom34 = $('<div></div>');
+
+                        dom04.append(dom24);
+                        dom04.append(dom34);
+                        dom34.append('<h5>' + date4 + '</h5>');
+                        dom34.append('<h4>' + temp4 + '</h4>');
+
+                        $('.todayitems').append(dom04);
+
+                        let dayiconCode4 = data.list[4].weather[0].icon;
+                        $('.dom4').attr('src', 'icon/'+ dayiconCode4 +'.png');
+
+
+
+
+                        let dt5 = data.list[5].dt;
+                        let date5 = moment(dt5 * 1000).format('HH:mm');
+
+                        let temp5 = data.list[5].main.temp.toFixed(0);
+                        let dom5_ = $('<h4>º</h4>');
+                        temp5 = temp5 + $(dom5_).text();
+
+                        let dom05 = $('<div class="todayitem"></div>');
+                        
+                        let dom25 = $('<img class="sub_icon dom5">');
+
+                        let dom35 = $('<div></div>');
+
+                        dom05.append(dom25);
+                        dom05.append(dom35);
+                        dom35.append('<h5>' + date5 + '</h5>');
+                        dom35.append('<h4>' + temp5 + '</h4>');
+
+                        $('.todayitems').append(dom05);
+
+                        let dayiconCode5 = data.list[5].weather[0].icon;
+                        $('.dom5').attr('src', 'icon/'+ dayiconCode5 +'.png');
+
+
+
+                        let dt6 = data.list[6].dt;
+                        let date6 = moment(dt6 * 1000).format('HH:mm');
+
+                        let temp6 = data.list[6].main.temp.toFixed(0);
+                        let dom6_ = $('<h4>º</h4>');
+                        temp6 = temp6 + $(dom6_).text();
+
+                        let dom06 = $('<div class="todayitem"></div>');
+                        
+                        let dom26 = $('<img class="sub_icon dom6">');
+
+                        let dom36 = $('<div></div>');
+
+                        dom06.append(dom26);
+                        dom06.append(dom36);
+                        dom36.append('<h5>' + date6 + '</h5>');
+                        dom36.append('<h4>' + temp6 + '</h4>');
+
+                        $('.todayitems').append(dom06);
+
+                        let dayiconCode6 = data.list[6].weather[0].icon;
+                        $('.dom6').attr('src', 'icon/'+ dayiconCode6 +'.png');
+
+
+
+                        let dt7 = data.list[7].dt;
+                        let date7 = moment(dt7 * 1000).format('HH:mm');
+
+                        let temp7 = data.list[7].main.temp.toFixed(0);
+                        let dom7_ = $('<h4>º</h4>');
+                        temp7 = temp7 + $(dom7_).text();
+
+                        let dom07 = $('<div class="todayitem"></div>');
+                        
+                        let dom27 = $('<img class="sub_icon dom7">');
+
+                        let dom37 = $('<div></div>');
+
+                        dom07.append(dom27);
+                        dom07.append(dom37);
+                        dom37.append('<h5>' + date7 + '</h5>');
+                        dom37.append('<h4>' + temp7 + '</h4>');
+
+                        $('.todayitems').append(dom07);
+
+                        let dayiconCode7 = data.list[7].weather[0].icon;
+                        $('.dom7').attr('src', 'icon/'+ dayiconCode7 +'.png');
+
+
+
+
+
+                        let wk1 = $('<div class="tditem"></div>'); 
+
+                        let wk2 = $('<img class="tditemicon wk0">');
+
+                        
+                        let date00 = moment(dt0 * 1000).format('ddd');                        
+
+                        wk1.append(wk2);
+                        wk1.append('<h5>' + date00 + '</h5>');
+                        $('.tditems').append(wk1);
+
+                        $('.wk0').attr('src', 'icon/'+ dayiconCode +'.png');
+
+
+                        
+
+
+                        let wk18 = $('<div class="tditem"></div>'); 
+
+                        let wk28 = $('<img class="tditemicon wk8">');
+
+                        let dt08 = data.list[8].dt;
+                        let date08 = moment(dt08 * 1000).format('ddd');                        
+
+                        wk18.append(wk28);
+                        wk18.append('<h5>' + date08 + '</h5>');
+                        $('.tditems').append(wk18);
+
+                        let subiconCode08 = data.list[8].weather[0].icon;
+                        $('.wk8').attr('src', 'icon/'+ subiconCode08 +'.png');
+
+                        
+
+                        let wk116 = $('<div class="tditem"></div>'); 
+
+                        let wk216 = $('<img class="tditemicon wk16">');
+
+                        let dt016 = data.list[16].dt;
+                        let date016 = moment(dt016 * 1000).format('ddd');                        
+
+                        wk116.append(wk216);
+                        wk116.append('<h5>' + date016 + '</h5>');
+                        $('.tditems').append(wk116);
+
+                        let subiconCode016 = data.list[16].weather[0].icon;
+                        $('.wk16').attr('src', 'icon/'+ subiconCode016 +'.png');
+
+                    
+
+
+                        let wk124 = $('<div class="tditem"></div>'); 
+
+                        let wk224 = $('<img class="tditemicon wk24">');
+
+                        let dt024 = data.list[24].dt;
+                        let date024 = moment(dt024 * 1000).format('ddd');                        
+
+                        wk124.append(wk224);
+                        wk124.append('<h5>' + date024 + '</h5>');
+                        $('.tditems').append(wk124);
+
+                        let subiconCode024 = data.list[24].weather[0].icon;
+                        $('.wk24').attr('src', 'icon/'+ subiconCode024 +'.png');
+
+
+
+
+                        let wk132 = $('<div class="tditem"></div>'); 
+
+                        let wk232 = $('<img class="tditemicon wk32">');
+
+                        let dt032 = data.list[32].dt;
+                        let date032 = moment(dt032 * 1000).format('ddd');                        
+
+                        wk132.append(wk232);
+                        wk132.append('<h5>' + date032 + '</h5>');
+                        $('.tditems').append(wk132);
+
+                        let subiconCode032 = data.list[32].weather[0].icon;
+                        $('.wk32').attr('src', 'icon/'+ subiconCode032 +'.png');
+
+
+
+
+
+
+                        let morewk10 = $('<div class="moreitem"></div>');
+
+                        let morewk20 = $('<img class="more_icon wk0" src="#" width="60px" height="60px">');
+
+
+                        let moretext0 = $('<div class="more_text"><h5>'+ date00 +'</h5><h4>'+ temp0 +'</h4></div>');
+
+                        $(morewk10).append(morewk20);
+                        $(morewk10).append(moretext0);
+                        
+                        $(morewk20).attr('src', 'icon/'+ dayiconCode +'.png');
+                        // $('.wk0').attr('src', 'icon/'+ dayiconCode +'.png');
+                        $('.moreitems').append(morewk10);
+
+                        
+                        ///////
+                        let morewk18 = $('<div class="moreitem"></div>');
+
+                        let morewk28 = $('<img class="more_icon wk8" src="#" width="60px" height="60px">');
+
+                        let temp8 = data.list[8].main.temp.toFixed(0);
+                        let moretext8 = $('<div class="more_text"><h5>'+ date08 +'</h5><h4>'+ temp8 + 'º' +'</h4></div>');
+
+                        $(morewk18).append(morewk28);
+                        $(morewk18).append(moretext8);
+                        
+                        $(morewk28).attr('src', 'icon/'+ subiconCode08 +'.png');
+                        // $('.wk0').attr('src', 'icon/'+ dayiconCode +'.png');
+                        $('.moreitems').append(morewk18);
+
+
+                        //////
+
+                        let morewk116 = $('<div class="moreitem"></div>');
+
+                        let morewk216 = $('<img class="more_icon wk16" src="#" width="60px" height="60px">');
+
+                        let temp16 = data.list[16].main.temp.toFixed(0);
+                        let moretext16 = $('<div class="more_text"><h5>'+ date016 +'</h5><h4>'+ temp16+ 'º' +'</h4></div>');
+
+                        $(morewk116).append(morewk216);
+                        $(morewk116).append(moretext16);
+                        
+                        $(morewk216).attr('src', 'icon/'+ subiconCode016 +'.png');
+                        // $('.wk0').attr('src', 'icon/'+ dayiconCode +'.png');
+                        $('.moreitems').append(morewk116);
+
+
+                        /////
+
+                        let morewk124 = $('<div class="moreitem"></div>');
+
+                        let morewk224 = $('<img class="more_icon wk24" src="#" width="60px" height="60px">');
+
+                        let temp24 = data.list[24].main.temp.toFixed(0);
+                        let moretext24 = $('<div class="more_text"><h5>'+ date024 +'</h5><h4>'+ temp24+ 'º' +'</h4></div>');
+
+                        $(morewk124).append(morewk224);
+                        $(morewk124).append(moretext24);
+                        
+                        $(morewk224).attr('src', 'icon/'+ subiconCode024 +'.png');
+                        // $('.wk0').attr('src', 'icon/'+ dayiconCode +'.png');
+                        $('.moreitems').append(morewk124);
+
+
+                        //////
+
+
+                        let morewk132 = $('<div class="moreitem"></div>');
+
+                        let morewk232 = $('<img class="more_icon wk32" src="#" width="60px" height="60px">');
+
+                        let temp32 = data.list[32].main.temp.toFixed(0);
+                        let moretext32 = $('<div class="more_text"><h5>'+ date032 +'</h5><h4>'+ temp32+ 'º' +'</h4></div>');
+
+                        $(morewk132).append(morewk232);
+                        $(morewk132).append(moretext32);
+                        
+                        $(morewk232).attr('src', 'icon/'+ subiconCode032 +'.png');
+                        // $('.wk0').attr('src', 'icon/'+ dayiconCode +'.png');
+                        $('.moreitems').append(morewk132);
+
+
+
+
+                });
+                ///////////
+
+                ////돋보기//////////
+                $('#searchcity').val('Find the city you want.');
+
+                $('#search').click(function(){
+                    
+
+                    $('#backicon').css('opacity','1');
+                    
+                    $('#statusbar').attr('src', 'https://i.postimg.cc/13JrV608/Statusbar-1.png');
+                    $('#searchcity').css('display', 'block');
+                    //$('#searchcity').val('Find the city you want.');
+
+                    $('#moon').css('background-color', 'transparent');
+                    $('#moon').css('z-index', '10');
+
+                    setTimeout(function(){
+                        $('.background').animate({'top': 450}, 100);
+                    }, 100);
+
+                    $('.detailweather').css('opacity', '0');
+                    $('.temp').css('opacity', '0');
+                    $('.subnav').css('opacity', '0');
+                    $('.rowscroll').css('opacity', '0');
+
+                    $('#main_icon').css('opacity', '0');
+                    $('#main_icon').css('display', 'none');
+
+                    $('#searchback').css('opacity', '1');
+                    $('.locate').css('margin-right', '800px');
+                    $('.main > p').css('margin-right', '800px');
+                    $('.locate').css('opacity', '0');
+                    $('.main > p').css('opacity', '0');
+
+
+                    $('#search').animate({'right': 324}, 200)
+                                .animate({'top': 64}, 200);
+                    $('#searchback').animate({'width': 366}, 300);
+                    $('#searchback').animate({'height': 50}, 300);
+                    $('#searchback').css('opacity', '1');
+
+                    $('#search > img').attr('src', 'https://i.postimg.cc/2SpHwLSz/GPS.png');
+                    $('.nav').css('display','none');
+
+                    //let backicon = $('<img id="backicon" src="https://i.postimg.cc/D0zfyQpF/back.png" width="36px"/>');
+                   // $('.main').prepend(backicon);
+                    //$('#backicon').css('opacity', '1');
+                    //$('#backicon').css('display', 'block');
+
+                    // 다른 도시 튀어나오게
+
+                    $('.theother').css('opacity','1');
+                    $('.theother').css('display','flex');
+                    $('.theother').animate({'height':200}, 100);
+
+                    /////back icon////  
+                })
+
+                $('#backicon').click(function(){
+
+
+                        $('#searchcity').val('Find the city you want.');
+
+                        $('.theother-contents').css('opacity','1');
+
+                        $('#backicon').css('opacity', '0');
+                        $('#statusbar').attr('src', 'https://i.postimg.cc/WpKR9WLf/Statusbar.png');
+                        $('#searchcity').css('display', 'none');
+
+                        $('#moon').css('z-index', '1');
+
+                        $('.background').animate({'top': 0}, 100);
+                        $('#searchback').css('opacity', '0');
+
+                        $('#search').animate({'right': 0}, 200);
+                        $('#search').animate({'top': 26}, 200);
+
+                        setTimeout(function(){
+
+                            $('#moon').css('background-color', '#535B74');
+                            
+
+                            
+                            $('#searchback').animate({'height': 50}, 300);
+
+                            $('.detailweather').css('opacity', '1');
+                            $('.temp').css('opacity', '1');
+                            $('.subnav').css('opacity', '1');
+                            $('.rowscroll').css('opacity', '1');
+
+                            $('#main_icon').css('opacity', '1');
+                            $('#main_icon').css('display', 'flex');
+
+                            $('.locate').css('margin-right', 'auto');
+                            $('.main > p').css('margin-right', 'auto');
+                            $('.locate').css('opacity', '1');
+                            $('.main > p').css('opacity', '1');
+
+                            $('#searchback').animate({'width': 40}, 300);
+                            
+
+                            $('#search > img').attr('src', 'https://i.postimg.cc/gJzNVByJ/Search.png');
+                            $('.nav').css('display','block');                            
+                        }, 400);
+
+                        $('.theother').css('opacity','0');
+                        $('.theother').css('display','none');
+                        $('.theother').animate({'height':0}, 100);
+                    })
+
+                $('#searchcity').click(function(){
+                        $('#searchcity').val('');
+                        $('.theother-contents').css('opacity','0');
+                });
+
+
+                //////네비게이션 클릭///////////////
+
+                $('.todolist').click(function(){
+
+                    $('#moremenu-backicon').click();
+
+
+                    $('.todolist').addClass('tdback-clicked');
+                    $('.todolist').removeClass('tdback');
+                    $('.home').addClass('hmback');
+                    $('.home').removeClass('hmback-clicked');
+                    $('.soundcloud').addClass('sdback');
+                    $('.soundcloud').removeClass('sdback-clicked');
+
+                    $('#statusbar').attr('src', 'https://i.postimg.cc/13JrV608/Statusbar-1.png');
+
+                    $('#moon').css('background-color', 'white');
+
+                    $('.todomain').css('right', '0px');
+                    $('.todomain').css('opacity', '1');
+                    $('.background').css('left', '414px');
+                    $('.background').css('opacity', '0');
+                    $('#main_icon').css('opacity', '0');
+                    $('#main_icon').css('left', '414px');
+                    $('.main').css('left', '414px');
+                    $('.main').css('opacity', '0');
+                    $('.soundcloud-main').css('opacity','0');
+
+                    $('.soundcloud-main').css('left','414px');
+                })
+
+                $('.home').click(function(){
+                    $('.home').removeClass('hmback');
+                    $('.home').addClass('hmback-clicked');
+                    $('.todolist').removeClass('tdback-clicked');
+                    $('.todolist').addClass('tdback');
+                    $('.soundcloud').removeClass('sdback-clicked');
+                    $('.soundcloud').addClass('sdback');
+                    $('#statusbar').attr('src', 'https://i.postimg.cc/WpKR9WLf/Statusbar.png');
+
+                    $('#moon').css('background-color', '#535B74');
+
+                    $('.todomain').css('right', '414px');
+                    $('.todomain').css('opacity', '0');
+                    $('.background').css('left', '0px');
+                    $('.background').css('opacity', '1');
+                    $('#main_icon').css('opacity', '1');
+                    $('#main_icon').css('left', '117px');
+                    $('.main').css('left', '0px');
+                    $('.main').css('opacity', '1');
+                    $('.soundcloud-main').css('left','414px');
+
+                    $('.soundcloud-main').css('opacity','0');
+
+                    $('#moremenu-backicon').click();
+                })
+
+                $('.soundcloud').click(function(){
+                    $('.home').removeClass('hmback-clicked');
+                    $('.home').addClass('hmback');
+                    $('.todolist').removeClass('tdback-clicked');
+                    $('.todolist').addClass('tdback');
+                    $('.soundcloud').removeClass('sdback');
+                    $('.soundcloud').addClass('sdback-clicked');
+
+                    $('.soundcloud-main').css('left','0');
+                    $('.soundcloud-main').css('opacity','1');
+
+                    $('#statusbar').attr('src', 'https://i.postimg.cc/13JrV608/Statusbar-1.png');
+
+                    $('#moon').css('background-color', 'white');
+
+                    $('.todomain').css('right', '828px');
+                    $('.todomain').css('opacity', '0');
+                    $('.background').css('left', '-414px');
+                    $('.background').css('opacity', '0');
+                    $('#main_icon').css('opacity', '0');
+                    $('#main_icon').css('left', '-414px');
+                    $('.main').css('left', '-414px');
+                    $('.main').css('opacity', '0');
+
+                    $('#moremenu-backicon').click();
+                })
+
+
+                $('#addlist').click(function(){
+                    $('.blackopacity').css('display','block');
+                    $('.blackopacity').css('z-index','40');
+                    $('.blackopacity').css('opacity','0.4');
+
+                    $('.listadd').css('opacity','1');
+                    $('.listadd').css('z-index','50');
+                    $('.listadd').css('top','190px');
+                })
+
+                $('#time').val('9');
+                $('#minutes').val('27');
+                $('.listinput > input').val('Fill in the contents.');
+
+                $('.pmbutton').click(function(){
+                    $('.togglebutton').removeClass('am');
+                    $('.togglebutton').addClass('pm');
+                    
+                    if($('.togglebutton').hasClass('pm')){
+                        $('.togglebutton').text('PM');
+                    }else{
+                        $('.togglebutton').text('AM');
+                    }
+                })
+
+                $('.ambutton').click(function(){
+                    $('.togglebutton').removeClass('pm');
+                    $('.togglebutton').addClass('am');
+                    
+                    if($('.togglebutton').hasClass('pm')){
+                        $('.togglebutton').text('PM');
+                    }else{
+                        $('.togglebutton').text('AM');
+                    }
+                })
+
+                $('.listinput > input').click(function(){
+                    $('.listinput > input').val('');
+                    $('#input-button').css('color', '#0B72E8');
+                })
+
+
+                $('#input-button').click(function(){
+
+                    $('.done').css('color', '#0B72E8');
+
+                    $('.listadd-content').css('top','50px');
+                    
+                    let list = $('<div class="listitem"></div>');
+
+                    let txt = $('.listinput > input').val();
+
+                    // let txt2 = $('<h5> • </h5>');
+
+                    let txt3 = $('<h5>' + '•' + txt + '</h5>');
+
+                    let txt4 = $(txt3).text();
+
+                    // list.append(txt2);
+                    list.append(txt3);
+
+                    $('.listitems').append(list);
+
+                    $('.listinput > input').val('');
+
+                    if( txt == "" ){
+                        return null;
+                    }
+
+                    $('#input-button').css('color', 'rgb(104, 129, 141)');
+
+
+                    // 새로운 리스트
+
+                    let newlist = $('<div class="list unchecked"></div>');
+
+                    // 텍스트
+
+                    let txts = $('<h6>' + '•' + txt +'</h6>');
+
+                    let newtxt = $('<div class="list-text"></div>');
+
+                    $(newtxt).append(txts);
+
+                    ////////시간 ///
+
+                    let time = $('#time').val();
+
+                    let minutes = $('#minutes').val();
+
+                    let newtime = $('<div>' + time + ':' + minutes + '</div>');
+
+                    let newdate = $('<div class="list-date"></div>');
+                    
+                    let ampm = $('.togglebutton').text();
+
+                    let newdt = $('<h5>'+ ampm +'</h5>');
+
+                    $(newdate).append(newtime);
+                    $(newdate).append(newdt);                    
+
+                    /////////////////////////////////////
+
+                    // 체크아이콘
+
+                    let checkicon = $('<div class="checkicon"></div>');
+
+                    $(newlist).append(newdate);
+                    $(newlist).append(newtxt);
+                    $(newlist).append(checkicon);
+                    
+
+                    /////
+
+
+                    $('.done').click(function(){
+                        $('.lists').append(newlist);
+
+                        $('.newlist').css('opacity', '1');
+                        $('.newlist').css('transition', 'all 0.3s ease-in-out');
+
+                        $('.blackopacity').css('z-index','1');
+                        $('.blackopacity').css('opacity','0');
+
+                        $('.listadd').css('opacity','0');
+                        $('.listadd').css('z-index','1');
+                        $('.listadd').css('top','896px');
+
+                        let result = '';
+                        if(event.target.checked)  {
+                            result = event.target.value;
+                        }else {
+                            result = '';
+                        }
+
+                        $('.listitems').empty();
+                        $('.listinput > input').val('Fill in the contents.');
+                        $('.togglebutton').removeClass('pm');
+                        $('.togglebutton').addClass('am');
+                        $('.togglebutton').text('AM');
+                        $('.done').css('color', '#686868');
+
+                        $('.checkicon').click(function(){
+                        $(this).addClass('checked-icon');
+                        $(this).removeClass('checkicon');
+                        $(this).parent().addClass('checked');
+
+                        $('.checked-icon').click(function(){
+
+                            if( $(this).parent().hasClass('checked') ){
+                                $(this).parent().animate({'margin-right': 500}, 100);
+                                $(this).parent().css('opacity','0');
+
+                                // $(this).parent().remove();
+                                
+                            };
+                            setTimeout(function(){
+
+                                    $('.checked-icon').parent().remove();
+                                    // 선택한 것만 지우게 하려고 this를 쓰면 작동을 하지 않음
+                                    // $('.checked').remove();
+                                }, 200);
+                            })
+                        })
+                    })
+
+                })
+
+
+
+                $('.close').click(function(){
+
+                    $('.blackopacity').css('z-index','1');
+                    $('.blackopacity').css('opacity','0');
+
+                    $('.listadd').css('opacity','0');
+                    $('.listadd').css('z-index','1');
+                    $('.listadd').css('top','896px');
+
+                    $('.listitems').empty();
+                    $('.listinput > input').val('Fill in the contents.');
+                    $('.togglebutton').removeClass('pm');
+                    $('.togglebutton').addClass('am');
+                    $('.togglebutton').text('AM');
+                    $('.done').css('color', '#686868');
+
+                })
+
+                $('.checkicon').click(function(){
+                    $(this).addClass('checked-icon');
+                    $(this).removeClass('checkicon');
+                    $(this).parent().addClass('checked');
+
+                    $('.checked-icon').click(function(){
+
+                        if( $(this).parent().hasClass('checked') ){
+                            $(this).parent().animate({'margin-right': 500}, 100);
+                            $(this).parent().css('opacity','0');
+
+                            // $(this).parent().remove();
+                            
+                        };
+                        setTimeout(function(){
+
+                                $('.checked-icon').parent().remove();
+                                // 선택한 것만 지우게 하려고 this를 쓰면 작동을 하지 않음
+                                // $('.checked').remove();
+                            }, 200);
+                    })
+                })
+
+                $.getJSON('http://api.openweathermap.org/data/2.5/air_pollution?lat=37.3236&lon=126.8219&appid=55aa2bc6da3730508a59007c6fe6302a',
+                function(data){
+                    let p25 = data.list[0].components.pm2_5.toFixed(0);
+
+                    $('#firstpm').text('Pm 2.5 l '+ p25 +' sg/m');
+
+                    let p10 = data.list[0].components.pm10.toFixed(0);
+
+                    $('#secondpm').text('Pm 10 l '+ p10 +' sg/m');
+
+                    let p25_2 =data.list[0].components.pm2_5.toFixed(0);
+                    let p10_2 = data.list[0].components.pm10.toFixed(0);
+                    
+                    $('#first').text(p25_2);
+                    $('#second').text(p10_2);
+
+                });
+
+                $('#weekly').click(function (){
+                    $('.moreweekly').css('left', '0px');
+                    $('.morecontent').css('right', '414px');
+                    $('.morecontent').css('opacity', '0');
+                    $('.moreweekly').css('opacity', '1');
+                    $('.highlighted').css('left','104px');
+                })
+
+                $('#today').click(function (){
+                    $('.moreweekly').css('left', '414px');
+                    $('.moreweekly').css('opacity', '0');
+                    $('.morecontent').css('right', '0px');
+                    $('.morecontent').css('opacity', '1');
+                    $('.highlighted').css('left','24px');
+                })
+
+                $('#viewmore').click(function (){
+                    //$('.more').animate({'top': 0}, 0.3);
+                    $('.more').css('top','0px');
+                    $('.main').css('opacity','0');
+                })
+
+                $('#moremenu-backicon').click(function (){
+                    $('.more').css('top','896px');
+                    $('.moreweekly').css('left', '414px');
+                    $('.moreweekly').css('opacity', '0');
+                    $('.morecontent').css('right', '0px');
+                    $('.morecontent').css('opacity', '1');
+                    $('.highlighted').css('left','24px');
+                    $('.main').css('opacity','1');
+                })
+
+            });
+        </script>
+    </body>
+</html>
